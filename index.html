@@ -1,1 +1,299 @@
-{\rtf1}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | QR Cola — Choose Your Rush</title>
+    <meta name="description" content="Shop the official QR Cola store. Stock up on Original, Zero Sugar, and Limited Edition flavors. Fast shipping and exclusive rewards.">
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Product Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.qrcola.com/shop/original"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.qrcola.com/shop/zero-sugar"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="dark-mode page-shop">
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title">WAIT! GET 10% OFF YOUR FIRST ORDER.</h2>
+            <p>Don't leave empty-handed. Drop your email below to claim your discount instantly.</p>
+            <form class="popup-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">CLAIM DISCOUNT</button>
+            </form>
+            <p class="micro-copy">Secure checkout. Money-back guarantee.</p>
+        </div>
+    </div>
+
+    <!-- Mini Cart Drawer -->
+    <div id="cart-overlay" class="cart-overlay hidden"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>YOUR CART</h3>
+            <button class="close-cart" aria-label="Close Cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Dynamically populated via JS, placeholder for visual -->
+            <div class="cart-item fade-up visible">
+                <div class="cart-item-img placeholder-original"></div>
+                <div class="cart-item-info">
+                    <h4>QR Cola Original</h4>
+                    <p>12-Pack</p>
+                    <div class="qty-control">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">$12.99</div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span>$12.99</span>
+            </div>
+            <p class="micro-copy center" style="margin-bottom: 1rem;">Taxes and shipping calculated at checkout.</p>
+            <a href="#" class="btn btn-primary btn-full">SECURE CHECKOUT 🔒</a>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">QR COLA</a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="flavors.html">Flavors</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button id="cart-icon" class="btn btn-ghost btn-small cart-icon-btn">CART (1)</button>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="flavors.html">Flavors</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Shop Hero Banner -->
+        <section class="shop-hero page-hero">
+            <div class="container center fade-up">
+                <h1>CHOOSE YOUR RUSH</h1>
+                <p class="sub-headline">Maximum carbonation. Delivered to your door.</p>
+            </div>
+        </section>
+
+        <!-- Main Shop Layout -->
+        <section class="shop-main container section-padding">
+            <div class="shop-layout">
+                
+                <!-- Sticky Sidebar Filter -->
+                <aside class="shop-sidebar fade-up">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <ul class="filter-list">
+                            <li><a href="#" class="active">All Rushes</a></li>
+                            <li><a href="#">Original</a></li>
+                            <li><a href="#">Zero Sugar</a></li>
+                            <li><a href="#">Flavored</a></li>
+                            <li><a href="#">Bundles <span class="badge">SAVE</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Sort By</h3>
+                        <select class="sort-select" aria-label="Sort products">
+                            <option value="popular">Most Popular</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="new">New Arrivals</option>
+                        </select>
+                    </div>
+
+                    <div class="trust-box">
+                        <p>📦 Free shipping on 2+ cases</p>
+                        <p>🔴 Scan cans for rewards</p>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <div class="shop-grid">
+                    
+                    <!-- Product 1 -->
+                    <div class="product-card shop-card fade-up">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-original">QR ORIGINAL</div>
+                        <div class="product-info">
+                            <h3>QR Cola Original</h3>
+                            <p class="flavor-desc">Bold. Crisp. Classic.</p>
+                            <div class="price-row">
+                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
+                            </div>
+                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card shop-card fade-up" style="transition-delay: 50ms;">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-zero">QR ZERO</div>
+                        <div class="product-info">
+                            <h3>QR Cola Zero Sugar</h3>
+                            <p class="flavor-desc">All the rush. Zero compromise.</p>
+                            <div class="price-row">
+                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
+                            </div>
+                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card shop-card fade-up" style="transition-delay: 100ms;">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-berry">BERRY BLAST</div>
+                        <div class="product-info">
+                            <h3>QR Berry Blast</h3>
+                            <p class="flavor-desc">Electric fruit fusion.</p>
+                            <div class="price-row">
+                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
+                            </div>
+                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card shop-card fade-up" style="transition-delay: 150ms;">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-original" style="background: linear-gradient(to top, #004a2d, #111); color: #00ff88;">CITRUS SURGE</div>
+                        <div class="product-info">
+                            <h3>QR Citrus Surge</h3>
+                            <p class="flavor-desc">High-voltage lemon-lime.</p>
+                            <div class="price-row">
+                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
+                            </div>
+                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 (Single Can) -->
+                    <div class="product-card shop-card fade-up" style="transition-delay: 200ms;">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-original">SINGLE CAN</div>
+                        <div class="product-info">
+                            <h3>Original (Single)</h3>
+                            <p class="flavor-desc">Grab a quick rush.</p>
+                            <div class="price-row">
+                                <span class="price">$2.99 <small>/ 1 Can</small></span>
+                            </div>
+                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 (Bundle) -->
+                    <div class="product-card shop-card bundle-card fade-up" style="transition-delay: 250ms;">
+                        <div class="limited-tag">BEST VALUE</div>
+                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        <div class="product-img placeholder-bundle" style="background: linear-gradient(135deg, var(--primary), #333); color: white;">THE RUSH BUNDLE</div>
+                        <div class="product-info">
+                            <h3>The Rush Sampler</h3>
+                            <p class="flavor-desc">24-Pack: 8 Orig, 8 Zero, 8 Berry.</p>
+                            <div class="price-row">
+                                <span class="price">$22.99 <span class="strike">$25.98</span></span>
+                            </div>
+                            <button class="btn btn-accent btn-full add-to-cart pulse-hover" style="background: var(--secondary); color: var(--accent);">ADD BUNDLE</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Identical to Homepage) -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">QR COLA</a>
+                <p>The Cold Drink That Hits Different.</p>
+                <div class="socials">
+                    <a href="#">IG</a>
+                    <a href="#">TT</a>
+                    <a href="#">X</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html">Merch</a>
+                <a href="locations.html">Store Locator</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="about.html">Our Story</a>
+                <a href="rewards.html">Rewards Program</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 QR Cola. All Rights Reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-tagline">
+            <span>SCAN THE TASTE. FEEL THE RUSH. ™</span>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <a href="#" class="back-to-top hidden" aria-label="Back to top">↑</a>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+</body>
+</html>
