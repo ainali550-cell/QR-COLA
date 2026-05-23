@@ -1,218 +1,296 @@
 /* ==========================================================================
-   FLAVORS PAGE SPECIFICS (Immersive Full-Screen Explorer)
+   ABOUT PAGE SPECIFICS
    ========================================================================== */
 
-/* Lock body scrolling, allow the main container to scroll */
-body.page-flavors {
-    overflow: hidden; 
-    margin: 0;
-    padding: 0;
+/* Editorial Hero Section */
+.about-hero {
+    padding-top: 150px; /* Offset for sticky header */
 }
 
-.flavor-explorer {
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    position: relative;
-    /* Hide scrollbar for cleaner look */
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-}
-
-.flavor-explorer::-webkit-scrollbar { 
-    display: none; 
-}
-
-.flavor-section {
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 80px; /* Offset for sticky header */
-}
-
-/* Background Color Shifts */
-#flavor-original {
-    background: radial-gradient(circle at center, #8a0014 0%, #050505 80%);
-}
-
-#flavor-zero {
-    background: radial-gradient(circle at center, #003a5c 0%, #050505 80%);
-}
-
-#flavor-berry {
-    background: radial-gradient(circle at center, #2e0052 0%, #050505 80%);
-}
-
-/* Giant Background Text */
-.giant-bg-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-head);
-    font-size: 20vw;
-    color: rgba(255, 255, 255, 0.03);
-    white-space: nowrap;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-}
-
-/* Flavor Grid Layout */
-.flavor-grid {
+.editorial-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    position: relative;
-    z-index: 10;
 }
 
-.reverse-layout {
-    direction: rtl;
-}
-.reverse-layout > * {
-    direction: ltr; /* resets text direction */
-}
-
-/* Typography & Content */
-.flavor-badge {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
+.eyebrow {
+    color: var(--primary);
     font-family: var(--font-head);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     margin-bottom: 1rem;
-    letter-spacing: 1px;
 }
 
-.badge-blue { background: #00aaff; color: #000; }
-.badge-purple { background: #9900ff; color: white; }
-
-.flavor-text h2 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    margin-bottom: 0.5rem;
-    line-height: 1;
+.editorial-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 2rem;
+    line-height: 1.1;
 }
 
-.taste-notes {
-    font-size: 1.5rem;
-    color: var(--highlight);
-    font-family: var(--font-head);
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
-.flavor-desc {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 90%;
-}
-
-.ingredients-list {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary);
-    margin-bottom: 2rem;
-    max-width: 90%;
-}
-
-.ingredients-list h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+.editorial-text p {
     color: var(--highlight);
+    margin-bottom: 1.5rem;
 }
 
-.ingredients-list ul li {
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+.founder-signature {
+    margin-top: 3rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
 }
 
-/* Can Variations for 3D Mockup */
-.can-original {
-    background: linear-gradient(135deg, var(--primary) 0%, #60000e 100%);
-    box-shadow: -10px 10px 30px rgba(192,0,29,0.3), inset 15px 0 20px rgba(255,255,255,0.2);
+.signature-font {
+    font-family: 'Georgia', serif; /* Handwritten proxy style */
+    font-style: italic;
+    font-size: 2rem;
+    display: block;
+    color: var(--secondary);
+    margin-bottom: 0.2rem;
 }
 
-.can-zero {
-    background: linear-gradient(135deg, #e0e0e0 0%, #888 100%);
-    box-shadow: -10px 10px 30px rgba(255,255,255,0.1), inset 15px 0 20px rgba(255,255,255,0.5);
+.founder-signature small {
+    font-family: var(--font-head);
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.can-berry {
-    background: linear-gradient(135deg, #7a00cc 0%, #3d0066 100%);
-    box-shadow: -10px 10px 30px rgba(122,0,204,0.3), inset 15px 0 20px rgba(255,255,255,0.2);
-}
-
-/* Snap Animations */
-.snap-fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.delay-1 { transition-delay: 0.2s; }
-
-.snap-fade.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Side Navigation Dots */
-.scroll-dots {
-    position: fixed;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+/* Image Placeholders with Overlay logic */
+.image-placeholder {
+    width: 100%;
+    min-height: 500px;
+    background-color: #111;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 100;
+    align-items: flex-end;
+    padding: 2rem;
 }
 
-.scroll-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: 2px solid transparent;
+/* CSS-generated visual placeholders since there are no image assets */
+.bg-garage { 
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent), repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px); 
+}
+.bg-can-crush { 
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent), repeating-linear-gradient(-45deg, #0a1c10, #0a1c10 10px, #112b18 10px, #112b18 20px); 
+    border: 1px solid #1a4a2a; 
+}
+
+.overlay-text {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    color: var(--secondary);
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+/* Mission Statement (Full Bleed Red Section) */
+.mission-statement {
+    background-color: var(--primary);
+    padding: 6rem 0;
+    margin: 4rem 0;
+    color: var(--accent);
+}
+
+.mission-eyebrow {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.giant-mission {
+    font-family: var(--font-head);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    color: var(--secondary);
+    text-shadow: 4px 4px 0px var(--accent);
+}
+
+/* Team Section */
+.team-grid {
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
     transition: var(--transition);
 }
 
-.scroll-dots .dot:hover, .scroll-dots .dot.active {
-    background: var(--primary);
-    border-color: #fff;
-    transform: scale(1.3);
+.team-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
 }
 
-/* Footer Snap Adjustment */
-.snap-footer {
-    scroll-snap-align: end; /* Snaps to bottom of footer */
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 3px solid #333;
+    background-color: #222;
 }
 
-.flavor-scroll {
-    bottom: 20px;
+/* Simulated avatars */
+.bg-alex { background: linear-gradient(135deg, #444, #111); }
+.bg-sarah { background: linear-gradient(135deg, var(--primary), #330000); }
+.bg-marcus { background: linear-gradient(135deg, #004466, #001122); }
+
+.member-info h3 {
+    margin-bottom: 0.2rem;
+    color: var(--secondary);
 }
 
-/* Mobile Adjustments for Flavors */
+.member-title {
+    color: var(--primary);
+    font-family: var(--font-head);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Sustainability Section */
+.sustain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sustain-text h2 {
+    margin-bottom: 1.5rem;
+}
+
+.sustain-text p {
+    color: var(--highlight);
+    margin-bottom: 2rem;
+}
+
+.eco-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 2px solid #333;
+    transition: var(--transition);
+}
+
+.eco-item:hover {
+    border-left-color: var(--primary);
+    background: #151515;
+}
+
+.eco-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.eco-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.eco-item p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Press / Media Section */
+.press-grid {
+    margin-top: 3rem;
+}
+
+.press-item {
+    padding: 2rem;
+    border: 1px dashed #333;
+    border-radius: 8px;
+    position: relative;
+}
+
+.press-item::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: var(--font-head);
+    font-size: 4rem;
+    color: rgba(192, 0, 29, 0.2);
+    line-height: 1;
+}
+
+.press-logo {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.press-item p {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--highlight);
+}
+
+/* Utility Delays for Animations */
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .giant-bg-text { font-size: 25vw; }
+    .editorial-grid, .sustain-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .editorial-text, .sustain-text {
+        text-align: center;
+    }
+    
+    .founder-signature {
+        border-left: none;
+        border-top: 2px solid var(--primary);
+        padding-left: 0;
+        padding-top: 1rem;
+        display: inline-block;
+    }
+
+    .eco-item {
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) {
-    .scroll-dots { display: none; }
-    .flavor-section { height: auto; min-height: 100vh; padding: 120px 0 60px; scroll-snap-align: start; }
-    .flavor-grid, .reverse-layout { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
-    .flavor-text { text-align: center; }
-    .flavor-desc, .ingredients-list { max-width: 100%; margin-left: auto; margin-right: auto; }
-    .ingredients-list { border-left: none; border-top: 4px solid var(--primary); }
-    .hero-ctas { flex-direction: column; gap: 1rem; }
+    .giant-mission {
+        font-size: 2.5rem;
+    }
+    
+    .image-placeholder {
+        min-height: 300px;
+    }
+    
+    .press-item {
+        margin-bottom: 1rem;
+    }
 }

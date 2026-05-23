@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | QR Cola — Choose Your Rush</title>
-    <meta name="description" content="Shop the official QR Cola store. Stock up on Original, Zero Sugar, and Limited Edition flavors. Fast shipping and exclusive rewards.">
+    <title>About Us | QR Cola</title>
+    <meta name="description" content="Discover the origin story of QR Cola. Learn about our mission, our founders, and our commitment to sustainability and maximum refreshment.">
     
     <!-- Preload Critical Assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,29 +14,23 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Product Schema.org for SEO -->
+    <!-- Schema.org for SEO -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org/",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "url": "https://www.qrcola.com/shop/original"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "url": "https://www.qrcola.com/shop/zero-sugar"
-        }
-      ]
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "QR Cola",
+        "foundingDate": "2021",
+        "description": "A premium cold beverage brand engineered for maximum carbonation and refreshment."
+      }
     }
     </script>
 </head>
-<body class="dark-mode page-shop">
+<body class="dark-mode page-about">
 
-    <!-- Exit Intent Popup -->
+    <!-- Exit Intent Popup (Global) -->
     <div id="exit-popup" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="close-modal" aria-label="Close">&times;</button>
@@ -50,7 +44,7 @@
         </div>
     </div>
 
-    <!-- Mini Cart Drawer -->
+    <!-- Mini Cart Drawer (Global UI consistency) -->
     <div id="cart-overlay" class="cart-overlay hidden"></div>
     <div id="cart-drawer" class="cart-drawer">
         <div class="cart-header">
@@ -58,28 +52,10 @@
             <button class="close-cart" aria-label="Close Cart">&times;</button>
         </div>
         <div class="cart-items">
-            <!-- Dynamically populated via JS, placeholder for visual -->
-            <div class="cart-item fade-up visible">
-                <div class="cart-item-img placeholder-original"></div>
-                <div class="cart-item-info">
-                    <h4>QR Cola Original</h4>
-                    <p>12-Pack</p>
-                    <div class="qty-control">
-                        <button class="qty-btn">-</button>
-                        <span>1</span>
-                        <button class="qty-btn">+</button>
-                    </div>
-                </div>
-                <div class="cart-item-price">$12.99</div>
-            </div>
+            <p class="center" style="color: #666; margin-top: 2rem;">Your cart is empty.</p>
         </div>
         <div class="cart-footer">
-            <div class="cart-subtotal">
-                <span>Subtotal</span>
-                <span>$12.99</span>
-            </div>
-            <p class="micro-copy center" style="margin-bottom: 1rem;">Taxes and shipping calculated at checkout.</p>
-            <a href="#" class="btn btn-primary btn-full">SECURE CHECKOUT 🔒</a>
+            <a href="shop.html" class="btn btn-primary btn-full">START SHOPPING</a>
         </div>
     </div>
 
@@ -89,14 +65,14 @@
             <a href="index.html" class="logo">QR COLA</a>
             <nav class="desktop-nav">
                 <a href="index.html">Home</a>
-                <a href="shop.html" class="active">Shop</a>
+                <a href="shop.html">Shop</a>
                 <a href="flavors.html">Flavors</a>
                 <a href="rewards.html">Rewards</a>
-                <a href="about.html">About</a>
+                <a href="about.html" class="active">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
             <div class="header-actions">
-                <button id="cart-icon" class="btn btn-ghost btn-small cart-icon-btn">CART (1)</button>
+                <button id="cart-icon" class="btn btn-ghost btn-small cart-icon-btn">CART (0)</button>
                 <button class="hamburger" aria-label="Toggle Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -107,151 +83,145 @@
         <!-- Mobile Menu -->
         <nav class="mobile-nav">
             <a href="index.html">Home</a>
-            <a href="shop.html" class="active">Shop</a>
+            <a href="shop.html">Shop</a>
             <a href="flavors.html">Flavors</a>
             <a href="rewards.html">Rewards</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
-        <!-- Shop Hero Banner -->
-        <section class="shop-hero page-hero">
-            <div class="container center fade-up">
-                <h1>CHOOSE YOUR RUSH</h1>
-                <p class="sub-headline">Maximum carbonation. Delivered to your door.</p>
+        <!-- Section 1: Origin Story (Editorial Layout) -->
+        <section class="about-hero section-padding">
+            <div class="container editorial-grid">
+                <div class="editorial-text fade-up">
+                    <div class="eyebrow">OUR STORY</div>
+                    <h1>HOW WE STARTED THE RUSH.</h1>
+                    <p class="lead-text">It started in a garage in 2021 with a simple realization: modern sodas are boring. They lose their fizz too fast, they’re packed with junk, and the branding puts you to sleep.</p>
+                    <p>We wanted a drink that hit different. Something engineered for maximum carbonation. Something that stays ice-cold and delivers a rush with every single sip. After 142 recipe iterations, QR Cola was born. And to make it even better, we connected the physical can to the digital world—giving back to our community with every scan.</p>
+                    <div class="founder-signature">
+                        <span class="signature-font">Alex & Sarah</span>
+                        <small>Founders, QR Cola</small>
+                    </div>
+                </div>
+                <div class="editorial-visual fade-up delay-1">
+                    <div class="image-placeholder bg-garage">
+                        <div class="overlay-text">GARAGE DAYS, 2021</div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Main Shop Layout -->
-        <section class="shop-main container section-padding">
-            <div class="shop-layout">
-                
-                <!-- Sticky Sidebar Filter -->
-                <aside class="shop-sidebar fade-up">
-                    <div class="filter-group">
-                        <h3>Categories</h3>
-                        <ul class="filter-list">
-                            <li><a href="#" class="active">All Rushes</a></li>
-                            <li><a href="#">Original</a></li>
-                            <li><a href="#">Zero Sugar</a></li>
-                            <li><a href="#">Flavored</a></li>
-                            <li><a href="#">Bundles <span class="badge">SAVE</span></a></li>
-                        </ul>
-                    </div>
+        <!-- Section 2: Mission Statement -->
+        <section class="mission-statement fade-up">
+            <div class="container center">
+                <h2 class="mission-eyebrow">OUR MISSION IS SIMPLE:</h2>
+                <div class="giant-mission">KILL THE BORING SODA.<br>MAXIMIZE THE RUSH.</div>
+            </div>
+        </section>
 
-                    <div class="filter-group">
-                        <h3>Sort By</h3>
-                        <select class="sort-select" aria-label="Sort products">
-                            <option value="popular">Most Popular</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="new">New Arrivals</option>
-                        </select>
+        <!-- Section 3: The Team -->
+        <section class="team-section section-padding container">
+            <div class="section-header center fade-up">
+                <h2>THE ARCHITECTS OF TASTE</h2>
+                <p>The crew behind the carbonation.</p>
+            </div>
+            <div class="grid-3 team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card fade-up">
+                    <div class="member-photo bg-alex"></div>
+                    <div class="member-info">
+                        <h3>Alex Mercer</h3>
+                        <p class="member-title">Co-Founder & CEO</p>
+                        <p class="member-bio">Former aerospace engineer obsessed with thermodynamics and keeping drinks colder, longer.</p>
                     </div>
-
-                    <div class="trust-box">
-                        <p>📦 Free shipping on 2+ cases</p>
-                        <p>🔴 Scan cans for rewards</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-card fade-up delay-1">
+                    <div class="member-photo bg-sarah"></div>
+                    <div class="member-info">
+                        <h3>Sarah Jenkins</h3>
+                        <p class="member-title">Co-Founder & Head of Flavor</p>
+                        <p class="member-bio">Master mixologist. Created the proprietary 3-spice blend that gives QR Original its legendary bite.</p>
                     </div>
-                </aside>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-card fade-up delay-2">
+                    <div class="member-photo bg-marcus"></div>
+                    <div class="member-info">
+                        <h3>Marcus Chen</h3>
+                        <p class="member-title">VP of Digital Rewards</p>
+                        <p class="member-bio">The mastermind behind the QR scanning infrastructure and the daily prize drops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Product Grid -->
-                <div class="shop-grid">
+        <!-- Section 4: Sustainability -->
+        <section class="sustainability-section section-padding">
+            <div class="container sustain-grid">
+                <div class="sustain-visual fade-up">
+                    <div class="image-placeholder bg-can-crush">
+                        <div class="overlay-text">100% RECYCLABLE</div>
+                    </div>
+                </div>
+                <div class="sustain-text fade-up delay-1">
+                    <h2>COLD DRINKS.<br>COOL PLANET.</h2>
+                    <p>We believe in leaving no trace behind—except an empty, fully recyclable can. Our commitment to sustainability isn't an afterthought; it's baked into our supply chain.</p>
                     
-                    <!-- Product 1 -->
-                    <div class="product-card shop-card fade-up">
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-original">QR ORIGINAL</div>
-                        <div class="product-info">
-                            <h3>QR Cola Original</h3>
-                            <p class="flavor-desc">Bold. Crisp. Classic.</p>
-                            <div class="price-row">
-                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
+                    <div class="eco-features">
+                        <div class="eco-item">
+                            <span class="eco-icon">♻️</span>
+                            <div>
+                                <h4>Infinite Loop Aluminum</h4>
+                                <p>Every QR Cola can is made from 75% recycled aluminum and is 100% infinitely recyclable.</p>
                             </div>
-                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="eco-item">
+                            <span class="eco-icon">⚡</span>
+                            <div>
+                                <h4>Clean Energy Brewing</h4>
+                                <p>Our primary bottling facility runs entirely on solar and wind power.</p>
+                            </div>
+                        </div>
+                        <div class="eco-item">
+                            <span class="eco-icon">💧</span>
+                            <div>
+                                <h4>Water Neutrality</h4>
+                                <p>For every gallon of water we use, we restore a gallon back to local watersheds.</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Product 2 -->
-                    <div class="product-card shop-card fade-up" style="transition-delay: 50ms;">
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-zero">QR ZERO</div>
-                        <div class="product-info">
-                            <h3>QR Cola Zero Sugar</h3>
-                            <p class="flavor-desc">All the rush. Zero compromise.</p>
-                            <div class="price-row">
-                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
-                            </div>
-                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-card shop-card fade-up" style="transition-delay: 100ms;">
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-berry">BERRY BLAST</div>
-                        <div class="product-info">
-                            <h3>QR Berry Blast</h3>
-                            <p class="flavor-desc">Electric fruit fusion.</p>
-                            <div class="price-row">
-                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
-                            </div>
-                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="product-card shop-card fade-up" style="transition-delay: 150ms;">
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-original" style="background: linear-gradient(to top, #004a2d, #111); color: #00ff88;">CITRUS SURGE</div>
-                        <div class="product-info">
-                            <h3>QR Citrus Surge</h3>
-                            <p class="flavor-desc">High-voltage lemon-lime.</p>
-                            <div class="price-row">
-                                <span class="price">$12.99 <small>/ 12-Pack</small></span>
-                            </div>
-                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
-                        </div>
-                    </div>
-
-                    <!-- Product 5 (Single Can) -->
-                    <div class="product-card shop-card fade-up" style="transition-delay: 200ms;">
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-original">SINGLE CAN</div>
-                        <div class="product-info">
-                            <h3>Original (Single)</h3>
-                            <p class="flavor-desc">Grab a quick rush.</p>
-                            <div class="price-row">
-                                <span class="price">$2.99 <small>/ 1 Can</small></span>
-                            </div>
-                            <button class="btn btn-primary btn-full add-to-cart">ADD TO CART</button>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 (Bundle) -->
-                    <div class="product-card shop-card bundle-card fade-up" style="transition-delay: 250ms;">
-                        <div class="limited-tag">BEST VALUE</div>
-                        <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
-                        <div class="product-img placeholder-bundle" style="background: linear-gradient(135deg, var(--primary), #333); color: white;">THE RUSH BUNDLE</div>
-                        <div class="product-info">
-                            <h3>The Rush Sampler</h3>
-                            <p class="flavor-desc">24-Pack: 8 Orig, 8 Zero, 8 Berry.</p>
-                            <div class="price-row">
-                                <span class="price">$22.99 <span class="strike">$25.98</span></span>
-                            </div>
-                            <button class="btn btn-accent btn-full add-to-cart pulse-hover" style="background: var(--secondary); color: var(--accent);">ADD BUNDLE</button>
-                        </div>
-                    </div>
-
+        <!-- Section 5: Press / Media -->
+        <section class="press-section section-padding container center">
+            <div class="section-header fade-up">
+                <h2>THE WORD ON THE STREET</h2>
+                <p>Industry disruptors making noise.</p>
+            </div>
+            <div class="grid-3 press-grid">
+                <div class="press-item fade-up">
+                    <h3 class="press-logo">BEVMAG</h3>
+                    <p>"QR Cola is single-handedly disrupting the stagnant soft drink industry with aggressive flavors and tech integration."</p>
+                </div>
+                <div class="press-item fade-up delay-1">
+                    <h3 class="press-logo">HYPE-DRINK</h3>
+                    <p>"The Berry Blast drop sold out in 14 minutes. This isn't just a soda, it's a culture."</p>
+                </div>
+                <div class="press-item fade-up delay-2">
+                    <h3 class="press-logo">TECH WEEKLY</h3>
+                    <p>"Brilliant gamification. Scanning your can for rewards is the physical-to-digital bridge we've been waiting for."</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER (Identical to Homepage) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
